@@ -1,0 +1,52 @@
+<idea-plugin url="https://github.com/httpflowlabs">
+  <id>com.github.httpflowlabs.httpflow.plugin.intellij</id>
+  <name>Httpflow for IntelliJ</name>
+  <version>1.0</version>
+  <vendor email="httpflowlabs@gmail.com" url="https://github.com/httpflowlabs">Httpflow Labs</vendor>
+
+  <description><![CDATA[
+      Httpflow is opensource project to reproduce http request
+    ]]></description>
+
+  <change-notes><![CDATA[
+      ver 1.0 : Initial release - Action menu to run .hfd file
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <configurationType implementation="com.github.httpflowlabs.httpflow.plugin.intellij.configuration.HttpFlowRunConfigurationType"/>
+    <codeInsight.lineMarkerProvider language="Httpflow" implementationClass="com.github.httpflowlabs.httpflow.plugin.intellij.codeInsight.HttpFlowLineMarkerProvider"/>
+    <codeInsight.lineMarkerProvider language="TEXT" implementationClass="com.github.httpflowlabs.httpflow.plugin.intellij.codeInsight.HttpFlowLineMarkerProvider"/>
+    <fileType name="Httpflow File" implementationClass="com.github.httpflowlabs.httpflow.plugin.intellij.filetype.HttpFlowFileType"
+              fieldName="INSTANCE" language="Httpflow" extensions="hfd"/>
+  </extensions>
+
+  <actions>
+    <group id="HttpFlowRunGroup">
+      <action
+              id="ExecuteAgent.runner.Action"
+              class="com.github.httpflowlabs.httpflow.plugin.intellij.ExecuteHfdRunnerAction"
+              text="Run '.hfd'"
+              description="Run .hfd file directly from editor">
+      </action>
+      <separator/>
+      <add-to-group group-id="EditorPopupMenu" anchor="first" />
+    </group>
+
+    <!--    <action-->
+    <!--            id="NewHfdFileAction"-->
+    <!--            class="com.github.httpflowlabs.httpflow.plugin.intellij.NewHfdFileAction"-->
+    <!--            text="Hfd File"-->
+    <!--            description="Create new hfd file">-->
+    <!--      <add-to-group group-id="NewGroup" anchor="before" relative-to-action="NewFile"/>-->
+    <!--    </action>-->
+  </actions>
+
+</idea-plugin>
