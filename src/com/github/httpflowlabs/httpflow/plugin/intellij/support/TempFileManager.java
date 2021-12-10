@@ -12,8 +12,10 @@ import java.util.List;
 
 public class TempFileManager {
 
-    public static final File HTTPFLOW_HOME = new File(System.getProperty("user.home"), ".httpflow-jenkins");
+    public static final File HTTPFLOW_HOME = new File(System.getProperty("user.home"), ".httpflow-intellij");
     public static final File HTTPFLOW_JAR_FILE = new File(HTTPFLOW_HOME, "httpflow-console-0.0.1.jar");
+    public static final String INSTALLER_HF_EXTENSION_NAME = ".hf";
+    public static final String INSTALLER_HF_PACKAGE_PATH = "/com/github/httpflowlabs/httpflow/plugin/intellij/installer/";
 
     private File shellFile;
     private boolean isWindowsOs;
@@ -28,7 +30,7 @@ public class TempFileManager {
             if (!HTTPFLOW_HOME.exists()) {
                 HTTPFLOW_HOME.mkdirs();
             }
-            HttpFlowJenkinsUtils.writeFile(HTTPFLOW_JAR_FILE, this.getClass().getResourceAsStream("/" + HTTPFLOW_JAR_FILE.getName()));
+            HttpFlowJenkinsUtils.writeFile(HTTPFLOW_JAR_FILE, this.getClass().getResourceAsStream(INSTALLER_HF_PACKAGE_PATH + HTTPFLOW_JAR_FILE.getName() + INSTALLER_HF_EXTENSION_NAME));
         }
     }
 
