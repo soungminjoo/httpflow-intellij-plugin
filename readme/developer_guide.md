@@ -37,7 +37,8 @@ plugin을 검색해서 선택해주면 그 아래 그림과 같이 오른쪽 영
 ![run_debug_02.png](run_debug_02.png)
 
 - ```use classpath of module``` 영역이 제대로 안나오는 경우는 위에서 import module할때,<br/>
-5번째 화면에서 reuse하지 않고 overwrite한 경우로 프로젝트를 지우고 다시 import 해보시기 바랍니다.
+5번째 화면에서 reuse하지 않고 overwrite한 경우로 프로젝트를 지우고 다시 import 해보시기 바랍니다.<br/>
+(실행시 ```No plugin module specified for configuration``` 오류가 발생하는 경우)
 
 - 실행시 ```com.intellij.idea.Main``` 클래스를 못찾는 경우는 위에서 import module할때,<br/>
 6번째 화면에서 SDK를 잘못 선택한 경우로, 위의 Run/Debug Configuration으로 가서 SDK를 다시<br/>
