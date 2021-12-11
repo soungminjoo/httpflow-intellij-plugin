@@ -19,6 +19,8 @@ Next 로 쭉 진행하면 되고, 5번째 화면에서 ```reuse``` 를 선택합
 
 ![import_04.png](import_04.png)
 
+아래 화면과 같이 reuse와 overwrite를 물어보면 ```reuse```를 선택해야 합니다.
 ![import_05.png](import_05.png)
 
+아래 화면과 같이 SDK를 여러개 중에 선택 가능한데, 꼭 ```IntelliJ IDEA...``` 로 시작하는 SDK를 선택해야 합니다.
 ![import_06.png](import_06.png)
